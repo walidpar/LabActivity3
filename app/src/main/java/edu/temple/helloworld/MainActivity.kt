@@ -21,8 +21,10 @@ class MainActivity : AppCompatActivity() {
         
         findViewById<Button>(R.id.clickMeButton).setOnClickListener {
             val name = findViewById<EditText>(R.id.nameEditText).text
-            if (name.isNotEmpty()) {displayTextView.text = "Hello ${name}!"} // checks if anything was entered
-            else {displayTextView.text = "Hello World!"} // goes back to hello world after removing your name
+
+            if (name.isNotEmpty()) displayTextView.text = "Hello ${name}!" // checks if anything was entered
+
+            else findViewById<EditText>(R.id.nameEditText).error = "This field cannot be empty"
         }
 
     }
